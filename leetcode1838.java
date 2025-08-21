@@ -1,7 +1,7 @@
 import java.util.Arrays;
 public class leetcode1838 {         
      public int maxFrequency(int[] nums, int k) {
-         // first lets sort the array using bubble sort without using built in function
+         // first lets sort the array  using built in function
         Arrays.sort(nums);
         // consider two pointers left and right now the logic is to first use a sorted array and then take two pointers for sliding window and our work is to check the left most elements when they are incremented are they equal to the right most element it is done by the part in which the current_sum is calculated , then the length of the window calculated by left-right+1 where right is the loop which runs from 0 to the array length and left is the sliding part which eliminates the element if the freq is more than the operations , now what we have considered is tofirst check the cost of making a smaller element to larger is the cost is less than k then fine otherwise eliminate the element  now the cost is calculated as the [window_length]*the rightmost element(the element everyone wanna be)-current_sum to see how much is the cost we need , think of it as i have 4 rs and someone has 6 so i need 2 more and i calulcate it by 6-4 the required goal-the current having;
         int left=0,right=0;        
