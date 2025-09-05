@@ -6,7 +6,7 @@ public class stockbuyandsell {
        while(j<a.length)
        {    
         diff=a[j]-a[i];
-        if(diff<0)  i+=1;
+        if(diff<0)  i=j;
         if(diff==0) j+=1;
         if(diff>0)
         {
