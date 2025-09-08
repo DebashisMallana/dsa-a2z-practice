@@ -64,7 +64,8 @@ public class setmatrixzero {
     {1, 0, 1}
         };
           ob.set(b);
-          int row=3,col=3;
+          int row=b.length;
+        int col=b[0].length;
         for(int i=0;i<row;i++)
         {
             for(int j=0;j<col;j++)
