@@ -2,7 +2,7 @@ import java.util.*;
 public class twosumproblem {
     public int[] sum(int a[],int k)
     {
-        Map<Integer, Integer> hash=new HashMap<>();
+        HashMap<Integer, Integer> hash=new HashMap<>();
         for(int i=0;i<a.length;i++)
         {
             int complement=k-a[i];
