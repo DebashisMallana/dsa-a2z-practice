@@ -5,6 +5,7 @@ public class binarysearch {
         //day 3 of writing a single line of code (10/02/2026)
         int l=arr.length;
         int start=0;//day 5 (12/02/2026)
+        int end=length-1;//day 6 (13/02/2026)
     }
     void recursivesearch(int arr[]){ //day 4 of writing a single line of code (11/02/2026)
 
