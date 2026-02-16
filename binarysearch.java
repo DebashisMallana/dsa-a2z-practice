@@ -8,6 +8,7 @@ public class binarysearch {
         int end=l-1;//day 6 (13/02/2026)
         int mid=(start+end)/2;//day 7(14/02/2026)
         while (start<=end) { //day 8(15/2/2026)
+            if(a[mid]==key)// day 9(16/02/2026)
             
         }
     }
