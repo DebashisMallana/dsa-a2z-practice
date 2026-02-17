@@ -9,6 +9,8 @@ public class binarysearch {
         int mid=(start+end)/2;//day 7(14/02/2026)
         while (start<=end) { //day 8(15/2/2026)
             if(a[mid]==key)// day 9(16/02/2026)
+                System.out.println("The element is found in the array");//day 10(17/02/2026)
+            
             
         }
     }
