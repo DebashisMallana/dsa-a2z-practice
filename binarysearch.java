@@ -11,6 +11,9 @@ public class binarysearch {
             if(a[mid]==key)// day 9(16/02/2026)
                 System.out.println("The element is found in the array");//day 10(17/02/2026)
             if(a[mid]<key)//day 11(18/02/2026)
+        {
+            end=mid-1;//day 12(19/02/2026)
+        }
             
         }
     }
