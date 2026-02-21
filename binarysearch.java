@@ -15,7 +15,9 @@ public class binarysearch {
             end=mid-1;//day 12(19/02/2026)
         }
         if(a[mid]<key)//day 13(20/02/2026)
-        {}
+        {
+            start=mid+1;//day 14(21/02/2026)
+        }
             
         }
     }
