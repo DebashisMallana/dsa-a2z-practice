@@ -23,6 +23,7 @@ public class binarysearch {
     void recursivesearch(int a[], int key){ //day 4 of writing a single line of code (11/02/2026)
         int l=a.length;//day 15(22/02/2026)
         int start=0;//day 16(23/02/2026)
+        int end=l-1;// day 17(24/02/2026)
 
     }
 
