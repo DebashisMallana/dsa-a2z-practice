@@ -25,7 +25,7 @@ public class binarysearch {
         int start=0;//day 16(23/02/2026)
         int end=l-1;// day 17(24/02/2026)
         int mid=(start+end)/2;// day 18(25/02/2026)
-        
+        if(a[mid]==key)// day 19(26/02/2026)
 
     }
 
