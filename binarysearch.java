@@ -26,6 +26,7 @@ public class binarysearch {
         int end=l-1;// day 17(24/02/2026)
         int mid=(start+end)/2;// day 18(25/02/2026)
         if(a[mid]==key)// day 19(26/02/2026)
+        System.out.println(("The Element was found"+key+" in the array at"+mid));// day 20(27/02/2026)
 
     }
 
