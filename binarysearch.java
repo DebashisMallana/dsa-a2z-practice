@@ -20,14 +20,14 @@ public class binarysearch {
         }
     }          
      }
-    void recursivesearch(int a[], int key){ //day 4 of writing a single line of code (11/02/2026)
+    void recursivesearch(int a[], int key,int start,int end){ //day 4 of writing a single line of code (11/02/2026)
         int l=a.length;//day 15(22/02/2026)
-        int start=0;//day 16(23/02/2026)
-        int end=l-1;// day 17(24/02/2026)
+        //day 16(23/02/2026)
+        // day 17(24/02/2026)
         int mid=(start+end)/2;// day 18(25/02/2026)
         if(a[mid]==key)// day 19(26/02/2026)
         System.out.println(("The Element was found"+key+" in the array at"+mid));// day 20(27/02/2026)
-
+        else if(a[mid]<key)//day 21 (28/02/2026)
     }
 
     
