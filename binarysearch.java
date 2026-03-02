@@ -28,6 +28,7 @@ public class binarysearch {
         if(a[mid]==key)// day 19(26/02/2026)
         System.out.println(("The Element was found"+key+" in the array at"+mid));// day 20(27/02/2026)
         else if(a[mid]<key)//day 21 (28/02/2026)
+        recursivesearch(a, key, mid+1, end);
     }
 
     
