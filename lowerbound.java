@@ -24,14 +24,6 @@ public class lowerbound
             start=mid+1;
         }
      }  
-     for(int i=0;i<l;i++)
-        {
-            if(a[i]<x)
-             res=i;
-            else 
-                break;
-        } 
-        return(res);
 
     }
     public static void main(String[] args) {
