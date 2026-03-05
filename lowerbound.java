@@ -15,15 +15,22 @@ public class lowerbound
         int mid=(start+end)/2;
             if(a[mid]==x)
                 return (mid);
-            if(a[mid]<x)
+             else if(a[mid]<x)
         {
             end=mid-1;
         }
-        if(a[mid]<x)
+        else (a[mid]<x)
         {
             start=mid+1;
         }
+
      }  
+     int first=0;
+        int last=l-1;
+        int res=l;
+        while (first<=last) {       
+        int center=(first+last)/2;
+           
 
     }
     public static void main(String[] args) {
