@@ -8,28 +8,23 @@ public class binarysearch {
         int end=l-1;//day 6 (13/02/2026)
         int res=0;
         while (start<=end) {       
-        int mid=(start+end)/2;//day 8(15/2/2026)
-            if(a[mid]==key)
-                {// day 9(16/02/2026)
-                System.out.println("The element is found in the array in the index:"+mid);//day 10(17/02/2026)
+        int mid=(start+end)/2;
+            if(a[mid]>=key)
+                {
+                    res=mid;
             break;
                 }
-            else if(a[mid]<key)//day 11(18/02/2026)
+            else if(a[mid]<key)
         {
-            end=mid-1;//day 12(19/02/2026)
+            start=mid+1;
         }
               else
         {
-            start=mid+1;//day 14(21/02/2026)
+           end=mid-1;
         }
         }
-              for(int i=0;i<l;i++)
-              {
-                if(a[i]>key)
-                 res=i;
-                break;
-            }
-            System.out.println(res);
+        System.out.println("The element is found in the array in the index:"+res);
+              
     }     
 
       public static void main(String[] args) {
