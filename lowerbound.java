@@ -5,35 +5,37 @@ public class lowerbound
     // where the value at that index is greater than or equal to a given key 
     //The lower bound is the smallest index, ind, where arr[ind] >= x
     //But if any such index is not found, the lower bound algorithm returns n i.e. size of the given array.
-    public int lb (int a[],int x)
-    {
+    public void lb (int a[],int key)
+    { 
        int l=a.length;
         int start=0;
         int end=l-1;
-        int res=l;
+        int res=0;
         while (start<=end) {       
         int mid=(start+end)/2;
-            if(a[mid]==x)
-                return (mid);
-             else if(a[mid]<x)
-        {
-            end=mid-1;
-        }
-        else (a[mid]<x)
+            if(a[mid]>=key)
+                {
+                    res=mid;
+            break;
+                }
+            else if(a[mid]<key)
         {
             start=mid+1;
         }
+              else
+        {
+           end=mid-1;
+        }
+        }
+        System.out.println("The element is found in the array in the index:"+res);
+              
+    }     
 
-     }  
-     int first=0;
-        int last=l-1;
-        int res=l;
-        while (first<=last) {       
-        int center=(first+last)/2;
-           
-
+      public static void main(String[] args) {
+        lowerbound ob =new lowerbound();
+        int arr[]={3,5,8,15,19};
+        ob.lb(arr,9);
+      }
     }
-    public static void main(String[] args) {
-        
-    }
-}
+       
+  
