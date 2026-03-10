@@ -7,26 +7,25 @@ public class floorceil{
         int l=a.length;
         int start=0;
         int end=l-1;
+        int floor=0,ceil=0;
         while (start<=end) {       
         int mid=(start+end)/2;
             if(a[mid]>=key)
                 {
-             System.out.println("The ceil of the "+key+"is "+a[mid]);
             break;
-                }
-                else if(a[mid]<key)
-                {
-                    System.out.println("The floor of the "+key+"is "+a[mid]);
-            break; 
-                }
+                } 
             else if(a[mid]<key)
         {
+            floor=a[mid];
             start=mid+1;
         }
               else
         {
+            ceil=a[mid];
            end=mid-1;
+           ;
         }
+        System.out.println("The floor of the key "+key+"  is "+floor+" and the ceil is "+ceil);
         }           
     }     
 
