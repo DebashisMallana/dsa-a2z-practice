@@ -8,26 +8,27 @@ public class floorceil{
         int start=0;
         int end=l-1;
         int floor=0,ceil=0;
+        int mid=0;
         while (start<=end) {       
-        int mid=(start+end)/2;
-            if(a[mid]>=key)
+         mid=(start+end)/2;
+            if(a[mid]==key)
                 {
-            break;
+                  floor=a[mid];
+                  ceil=a[mid];
+                  System.out.println("The floor of the element "+key+" and the ceil is "+ceil);
+                  break;
                 } 
             else if(a[mid]<key)
         {
-            floor=a[mid];
             start=mid+1;
         }
               else
         {
-            ceil=a[mid];
            end=mid-1;
-           ;
         }
-        System.out.println("The floor of the key "+key+"  is "+floor+" and the ceil is "+ceil);
-        }           
-    }     
+       
+        }  
+    }
 
       public static void main(String[] args) {
        floorceil ob =new floorceil();
