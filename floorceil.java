@@ -3,36 +3,48 @@ public class floorceil{
     // Find the floor and ceiling of x in arr[0..n-1]. 
     // The floor of x is the largest element in the array which is smaller than or equal to x. 
     // The ceiling of x is the smallest element in the array greater than or equal to x
-    public void fc(int a[], int key){
+    public void floor(int a[], int key){
         int l=a.length;
         int start=0;
         int end=l-1;
-        int floor=0,ceil=0;
-        int mid=0;
+        int f=-1;
         while (start<=end) {       
-         mid=(start+end)/2;
-            if(a[mid]==key)
+        int mid=(start+end)/2;
+            if(a[mid]<=key)
                 {
-                  floor=a[mid];
-                  ceil=a[mid];
-                  System.out.println("The floor of the element "+key+" and the ceil is "+ceil);
-                  break;
+                  f=a[mid];
                 } 
-            else if(a[mid]<key)
-        {
-            start=mid+1;
-        }
               else
         {
            end=mid-1;
-        }
-       
+        }      
         }  
+        System.out.println("The floor of the element "+key+" is"+f);
+    }
+    public void ceil (int a[],int key){
+        int l=a.length;
+        int start=0;
+        int end=l-1;
+        int c=-1;
+        while (start<=end) {       
+        int mid=(start+end)/2;
+            if(a[mid]>=key)
+                {
+                  c=a[mid];
+                } 
+            else 
+        {
+            start=mid+1;
+        }
+        }  
+        System.out.println("The ceil of the element "+key+" is"+c);
+        
     }
 
       public static void main(String[] args) {
        floorceil ob =new floorceil();
         int arr[]={3, 4, 4, 7, 8, 10};
-        ob.fc(arr,5);
+        ob.floor(arr,5);
+        ob.ceil(arr,5);
       }
     }
