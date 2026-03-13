@@ -13,6 +13,7 @@ public class floorceil{
             if(a[mid]<=key)
                 {
                   f=a[mid];
+                  start++;
                 } 
               else
         {
@@ -31,6 +32,7 @@ public class floorceil{
             if(a[mid]>=key)
                 {
                   c=a[mid];
+                  end--;
                 } 
             else 
         {
@@ -44,7 +46,7 @@ public class floorceil{
       public static void main(String[] args) {
        floorceil ob =new floorceil();
         int arr[]={3, 4, 4, 7, 8, 10};
-        ob.floor(arr,5);
-        ob.ceil(arr,5);
+        ob.floor(arr,8);
+        ob.ceil(arr,8);
       }
     }
