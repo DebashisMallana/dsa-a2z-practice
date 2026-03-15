@@ -9,7 +9,7 @@ public class binarysearch {
         int res=0;
         while (start<=end) {       
         int mid=(start+end)/2;
-            if(a[mid]>=key)
+            if(a[mid]==key)
                 {
                     res=mid;
             break;
@@ -30,7 +30,7 @@ public class binarysearch {
       public static void main(String[] args) {
         binarysearch ob =new binarysearch();
         int arr[]={3,5,8,15,19};
-        ob.search(arr,9);
+        ob.search(arr,11);
       }
     }
 
