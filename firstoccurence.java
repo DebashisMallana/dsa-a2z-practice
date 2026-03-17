@@ -4,24 +4,24 @@ public class firstoccurence {
     void fo(int a[],int key)
     {
         int l=a.length;
-        int start=l-1;
-        int end=0;
+        int start=0;
+        int end=l-1;
         int fo1=-1;
-        while (start>=end) {       
+        while (start<=end) {       
         int mid=(start+end)/2;
         if(a[mid]==key)
                 {
                  fo1=mid;              
                 } 
-              else if( a[mid]>key)
+              else if( a[mid]<key)
         {
-           end=mid-1;  
+           start=mid+1;  
         }  
         else{
-            start=mid+1;  
+            end=mid-1;  
         }
         }  
-        System.out.println("The first occurence of the element "+key+" is" +fo1);
+        System.out.println("The last occurence of the element "+key+" is" +fo1);
     }    
 
       public static void main(String[] args) {
