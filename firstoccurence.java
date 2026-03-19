@@ -24,11 +24,7 @@ public class firstoccurence {
         System.out.println("The last occurence of the element "+key+" is" +fo1);
     }    
 
-      public static void main(String[] args) {
-       firstoccurence ob =new firstoccurence();
-        int arr[]={3, 4, 13, 13, 13, 20, 40} ;
-        //ob.lo(arr,13);
-        ob.fo(arr,13);
+      
       }
     }
 
