@@ -9,7 +9,7 @@ public class upperbound {
         int end=l-1;
         while (start<=end) {       
         int mid=(start+end)/2;
-            if(a[mid]>=x)
+            if(a[mid]>x)
             {
                 System.out.println("The Upper bound of the key provided is "+mid);
             break;

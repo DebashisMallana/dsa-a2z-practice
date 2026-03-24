@@ -9,7 +9,7 @@ public class lowerbound
     { 
        int l=a.length;
         int start=0;
-        int end=l-1;
+        int end=l-1; 
         int res=0;
         while (start<=end) {       
         int mid=(start+end)/2;
