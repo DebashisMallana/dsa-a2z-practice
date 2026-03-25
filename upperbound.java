@@ -7,6 +7,7 @@ public class upperbound {
        int l=a.length;
         int start=0;
         int end=l-1;
+        int ans=l;
         while (start<=end) {       
         int mid=(start+end)/2;
             if(a[mid]>x)

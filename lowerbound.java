@@ -10,24 +10,19 @@ public class lowerbound
        int l=a.length;
         int start=0;
         int end=l-1; 
-        int res=0;
+        int ans=l;
         while (start<=end) {       
         int mid=(start+end)/2;
             if(a[mid]>=key)
                 {
-                    res=mid;
-            break;
+                    ans=mid;
                 }
-            else if(a[mid]<key)
-        {
-            start=mid+1;
-        }
               else
         {
            end=mid-1;
         }
         }
-        System.out.println("The element is found in the array in the index:"+res);
+        System.out.println("The element is found in the array in the index:"+ans);
               
     }     
 
