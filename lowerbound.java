@@ -16,10 +16,11 @@ public class lowerbound
             if(a[mid]>=key)
                 {
                     ans=mid;
+                    end=mid-1;
                 }
               else
         {
-           end=mid-1;
+           start=mid+1;
         }
         }
         System.out.println("The element is found in the array in the index:"+ans);
