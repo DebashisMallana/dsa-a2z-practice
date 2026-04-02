@@ -5,6 +5,7 @@ public class searchinganelementinarotatedsortedarray {
         int end=l-1;
         while(start<=end){
             int mid=(start+end)/2;
+            if(a[start]<=a[mid]){
             if(a[mid]==key){
                 System.out.println("the key is at"+mid);
             return;
@@ -15,6 +16,10 @@ public class searchinganelementinarotatedsortedarray {
                 start=mid+1;
 
         }
+        else
+            start=mid+1;
+        }
+            
         System.out.println("-1");
 
     }
