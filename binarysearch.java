@@ -29,8 +29,8 @@ public class binarysearch {
 
       public static void main(String[] args) {
         binarysearch ob =new binarysearch();
-        int arr[]={3,5,8,15,19};
-        ob.search(arr,11);
+        int arr[]={3,5,8,8,8,15,15,15,19};
+        ob.search(arr,15);
       }
     }
 
