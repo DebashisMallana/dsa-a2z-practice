@@ -15,12 +15,12 @@ public class sqrtofanumber {
             }
         }
 
-        return -1;   
+        return end;   
     }
 
     public static void main(String[] args) {
         sqrtofanumber obj = new sqrtofanumber();
-        int n = 7;
+        int n = 28;
         System.out.println(obj.floorSqrt(n));
     }
 }
