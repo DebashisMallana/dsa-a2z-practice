@@ -13,7 +13,7 @@ public class mindaystomakebouqet
             bouquet+=consecutive/k;
             consecutive=0;
         }
-            
+            bouquet+=consecutive/k;
         
         }     
         return bouquet;
