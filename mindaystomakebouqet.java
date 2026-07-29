@@ -7,15 +7,14 @@ public class mindaystomakebouqet
         for(int i=0;i<a.length;i++)
         {
            if(a[i]<=d)
-            ++consecutive;
+            consecutive++;
         else
         {
-            bouquet+=consecutive/k;
-            consecutive=0;
-        }
-            bouquet+=consecutive/k;
-        
-        }     
+         bouquet+=consecutive/k;
+        consecutive=0;
+        }   
+    }
+         bouquet+=consecutive/k;
         return bouquet;
     }
     int days(int n,int a[],int m, int k)
@@ -31,13 +30,13 @@ public class mindaystomakebouqet
        while(start<=end)
        {
         int mid=start+(end-start)/2;
-        if(blossom(mid,a,k)<=m)
+        if(blossom(mid,a,k)>=m)
         {
-           ans=mid;
-        start=mid+1;
+           ans=mid;      
+        end=mid-1;
         }
             else                
-         end=mid-1;
+          start=mid+1;
        }
        return ans;       
     }
