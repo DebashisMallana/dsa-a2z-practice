@@ -23,13 +23,21 @@ public class agressivecowsbruteforce {
         Arrays.sort(a);
         int l=a.length;
         int max=a[l-1];
-        int min=1;
-        for(int i=1;i<=max;i++)
+        int low=0;
+        int high=max;
+        int ans=-1
+        while(low<=high)
         {
-            if(canWePlace(a,i,cows)) continue;
-            else return i-1;
+            int mid=low+(high-low)/2;
+            if(canWePlace(a,mid,cows))
+            {
+                ans=mid;
+                low=mid+1;
+            }
+            else
+                high=mid-1;
         }
-        return -1;
+        return ans;
     }
     public static void main(String args[])
     {
