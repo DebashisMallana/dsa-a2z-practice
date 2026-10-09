@@ -1,21 +1,26 @@
 public class searcha2dmatrixpart2 {
      public static boolean searchMatrix(int[][] mat, int target) {
-        
-        for(int i=0;i<mat.length;i++)
-        {
-            for(int j=0;j<mat[i].length;j++)
-            {
-                if((i+j)==mat.length)
-                {
-                    if(target > mat[i][j]) i++;
-                    else if(target<mat[i][j]) j++;
-                    else return true;
-                }
+   if(mat.length==0) return false;
+    int rows=mat.length;
+    int cols=mat[0].length;
+    int row=0;
+    int col=cols-1;
+    while(row<rows && col>=0)
+    {
+      if(target<mat[row][col])
+    {
+        col--;
+    }
+    else if(target>mat[row][col])
+    {
+        row++;
 
-            }x`x`
-        }
-     } 
-
+    }
+    else 
+        return true;
+ }
+    return false;        
+    }
 public static void main(String[] args) {
     int[][] matrix = {
     {1, 4, 7, 11, 15},
