@@ -1,31 +1,62 @@
-public class contest1
-{
-public static int[] maxProductPair(int[] nums, int target) {
-        int l=nums.length;
-        int max=Integer.MIN_VALUE;
-        int res[]={-1,-1};
-       for(int i=0;i<l;i++)
-       {
-        for(int j=i+1;j<l;j++)
+import java.util.*;
+public class BusBooking {
+Map <String, Integer> bus;
+int totaltime=0;
+int removedcost;
+    public BusBooking(int n)
+     {  
+       bus= new HashMap<>();
+    }
+    
+    public void toggle(String seat) {
+        if(bus.containsKey(seat))
         {
-           if(nums[i]+nums[j]==target && nums[i]>nums[j])
-           {
-                if(nums[i]*nums[j]>max)
-                {
-                        max=nums[i]*nums[j];
-                        res[0]=i;
-                        res[1]=j;
-                }
-           }
+           removedcost= bus.remove(seat);
+           totaltime-=removedcost;
         }
+        else 
+        {
+            int cost=0;
+            String neighbour="";
+            if(seat.charAt(0)=='A')
+                neighbour='B'+seat.substring(1); 
+            if(seat.charAt(0)=='D')
+                neighbour='C'+seat.substring(1);
+
+            if(bus.containsKey(neighbour)) cost=3;
+            else cost=1;
+            bus.put(seat,cost);
+            totaltime+=cost;
+        }
+    }
+    
+    public int getTotalTime() {
+        return totaltime;
+    }
+    
+    public int getMinTime() {
+        return bus.size();
+    }
+    public static void main(String[] args) {
+        int n=10;
+         BusBooking obj = new BusBooking(n);
+         obj.toggle("C7");
+         obj.toggle("D7");
+         obj.toggle("D7");
+         obj.toggle("C7");
+         System.out.print(obj.getTotalTime()+" ");
+         System.out.print(obj.getMinTime()+" ");
+
+    }
 }
-        return res;
-}
-public static void main(String[] args) {
-    int a[]={1,2,3,4};
-    int target=5;
-    int k[]=maxProductPair(a, target);
-    for(int i:k)
-    System.out.print(i+" ");
-}
-}
+
+
+/**
+ * Your BusBooking object will be instantiated and called as such:
+ * BusBooking obj = new BusBooking(n);
+ * obj.toggle(seat);
+ * int param_2 = obj.getTotalTime();
+ * int param_3 = obj.getMinTime();
+ */
+    
+
