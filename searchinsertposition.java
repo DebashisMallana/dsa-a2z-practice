@@ -1,36 +1,25 @@
 public class searchinsertposition{
     //You are given a sorted array arr of distinct values and a target value x. 
     // You need to search for the index of the target value in the array.
-    public void pos(int a[], int key){
-        int l=a.length;
-        int start=0;
-        int end=l-1;
-        while (start<=end) {       
-        int mid=(start+end)/2;
-            if(a[mid]>key)
-                {
-             System.out.println("The element"+key+"can be inserted in the index:"+mid);
-            break;
-                }
-                else if(a[mid]==key)
-                {
-                    System.out.println("The element"+key+"is already present in the array in the index:"+mid);
-            break; 
-                }
-            else if(a[mid]<key)
-        {
-            start=mid+1;
-        }
-              else
-        {
-           end=mid-1;
-        }
-        }           
-    }     
+    public static int searchInsert(int[] a, int target) {
+         int l=a.length;
+         if(a[l-1]<target) return l;
+         if(a[0]>target) return 0;
+         int low=0;
+         int high=l-1;
+         while(low<=high)
+         {
+            int mid=low+(high-low)/2;
+            if(a[mid]==target) return mid;
+            else if(a[mid]>target) high=mid-1;
+            else if(a[mid]<target) low=mid+1;           
+         }
+         return low;
+    }
 
       public static void main(String[] args) {
        searchinsertposition ob =new searchinsertposition();
         int arr[]={1,2,4,7};
-        ob.pos(arr,2);
+        System.out.println(searchInsert(arr,2));
       }
     }
