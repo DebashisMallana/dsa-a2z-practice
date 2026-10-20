@@ -11,7 +11,7 @@ public class sample {
             else if(square<x) low=mid+1;
             else high=mid-1;
         }
-        return high;
+        return mid;
     }
     public static void main(String[] args) {
         System.out.println(mySqrt(5));
