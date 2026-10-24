@@ -1,48 +1,41 @@
 import java.util.*;
 public class TimeMap {
-String k;
-String v;
-int ts;
-HashMap<Integer, HashMap<String, String>> map = new HashMap<>();
+HashMap<String, Map<Integer,String>> map;
     public TimeMap() {
+        map=new HashMap<>();
     }
     
     public void set(String key, String value, int timestamp) {
-        map.putIfAbsent(timestamp, new HashMap<>());
-        map.get(timestamp).put(key, value); 
+        if(!map.containsKey(key))
+        {
+           map.put(key,new HashMap<>());
+        }    
+        map.get(key).put(timestamp, value);
     }
     
     public String get(String key, int timestamp) {
-        if(map.containsKey(timestamp))
-            {
-                if(map.get(timestamp).containsKey(key))
-            return map.get(timestamp).get(key);
-            }
+        if(!map.containsKey(key)) return "";
+        else if(map.get(key).containsKey(timestamp)) return map.get(key).get(timestamp);
         else 
         {
-            int high=timestamp;
-            int low=0;
-            while(high>=low)
-            {
-                int mid=low+(high-low)/2;
-                if(map.containsKey(mid))
-                    {
-                        if(map.get(mid).containsKey(key)) return map.get(mid).get(key);
-                    }
-                    else high=mid-1;
-            }
+            int max=-1;
+           for(int time:map.get(key).keySet())
+           {
+              if(time<=timestamp && time>max) max=time;
+           }
+           if(max==-1) return "";
+           else
+           return map.get(key).get(max);
         }
-        return "";
     }
+        
 
     public static void main(String[] args) {
     TimeMap obj = new TimeMap();
-
     obj.set("ctondw", "ztpearaw", 1);
     obj.set("vrobykydll", "hwliiq", 2);
     obj.set("gszaw", "ztpearaw", 3);
     obj.set("ctondw", "gszaw", 4);
-
     System.out.println(obj.get("gszaw", 5));
     System.out.println(obj.get("ctondw", 6));
     System.out.println(obj.get("ctondw", 7));

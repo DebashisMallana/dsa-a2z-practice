@@ -1,62 +1,27 @@
-import java.util.*;
-public class BusBooking {
-Map <String, Integer> bus;
-int totaltime=0;
-int removedcost;
-    public BusBooking(int n)
-     {  
-       bus= new HashMap<>();
-    }
-    
-    public void toggle(String seat) {
-        if(bus.containsKey(seat))
+public class contest3med {
+     public static long countSubarrays(int[] nums, int minK, int maxK) {
+        long c=0;
+        int l=nums.length;
+        int i;
+        int j=0;
+        int subarraylength=0;
+        for(i=0;i<l;i++)
         {
-           removedcost= bus.remove(seat);
-           totaltime-=removedcost;
+            while(j<l && nums[j]>=minK && nums[j]<=maxK)
+            {
+                j++;
+                subarraylength++;
+            }
+            c+=subarraylength*(subarraylength+1)/2;
+            subarraylength=0;
+            j++;
         }
-        else 
-        {
-            int cost=0;
-            String neighbour="";
-            if(seat.charAt(0)=='A')
-                neighbour='B'+seat.substring(1); 
-            if(seat.charAt(0)=='D')
-                neighbour='C'+seat.substring(1);
-
-            if(bus.containsKey(neighbour)) cost=3;
-            else cost=1;
-            bus.put(seat,cost);
-            totaltime+=cost;
-        }
-    }
-    
-    public int getTotalTime() {
-        return totaltime;
-    }
-    
-    public int getMinTime() {
-        return bus.size();
+        return c;    
     }
     public static void main(String[] args) {
-        int n=10;
-         BusBooking obj = new BusBooking(n);
-         obj.toggle("C7");
-         obj.toggle("D7");
-         obj.toggle("D7");
-         obj.toggle("C7");
-         System.out.print(obj.getTotalTime()+" ");
-         System.out.print(obj.getMinTime()+" ");
-
+        int arr[]={1,4,7,3};
+        int minK=1;
+        int maxK=5;
+        System.out.println(countSubarrays(arr,minK,maxK));
     }
 }
-
-
-/**
- * Your BusBooking object will be instantiated and called as such:
- * BusBooking obj = new BusBooking(n);
- * obj.toggle(seat);
- * int param_2 = obj.getTotalTime();
- * int param_3 = obj.getMinTime();
- */
-    
-
